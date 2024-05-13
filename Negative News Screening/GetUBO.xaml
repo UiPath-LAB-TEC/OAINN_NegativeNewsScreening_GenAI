@@ -1,0 +1,285 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetUBO" this:GetUBO.in_DocPath="Def14A\\Tesla.pdf" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:aa="clr-namespace:AttendedRobotStatus.Activities;assembly=AttendedRobotStatus" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C3698102D5C_generateChatCompletionConsolidated_Create.Bundle;assembly=C3698102D5C_generate.UzsYr1XoLzF1Gz41CiMGFv" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisascb="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType7E67631E392C45A09C22Bcad5849B79C.Bundle;assembly=CustomGptDocumentTyp.EUfIEBRMpA1uC9bl34paTp" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_DocPath" Type="InArgument(x:String)" />
+    <x:Property Name="out_dtOwnersInformation" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1202,1785</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetUBO_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Entity</x:String>
+      <x:String>UiPath.IntegrationService.Infrastructure.Descriptor</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Enums</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Telemetry</x:String>
+      <x:String>UiPath.BAF.Infrastructure</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Connection</x:String>
+      <x:String>UiPath.MicrosoftAzureOpenAI.IntegrationService.Activities</x:String>
+      <x:String>UiPath.IntegrationCore.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType6Cbc31Cc21404A0AA5D5B1Efe7Bf704D.Bundle</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType70Daa65468Cc41579E4D8Aa50C931B49.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType3De7C425424D4F40A568A06A23B58595.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeF7937Cf07D454F02Bf6707Fa6187549A.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType1943E0F311A14C7699Ba17828De08B6F.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeA97687428Bc14859A0B229B985E67A1A.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeCb854F90C48B4Dcc8487E7F084743978.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType32082Ac115Ef4B22Bf83E24Eb031F69A.Bundle</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType269Cad36499341C7A14CE4E79F3D60Dc.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeFabe7Ef3639E466F8F1C4Bc39Df08426.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType9793E823896F4087A88A759Ef0Adabdc.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType90F5B3F5Eadd49C8Aa49D818F236F25E.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeAebe8D43Cb0644A581797838Ef96D7A5.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeEc778A9FE3Ab4Ea9A8444F1C0Bf79F66.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType7E67631E392C45A09C22Bcad5849B79C.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C78768592AD_generateChatCompletionConsolidated_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C78768592AD_generateChatCompletionConsolidated_Create.Bundle</x:String>
+      <x:String>AttendedRobotStatus.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>CustomGptDocumentTyp.5tXb62r6g8H15Mt5OEjFXm3</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.al2dJXQcXQ1Yc4XQ2xa8gD1</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.EzAtK1DphCM1NsVHP1ZGRWO3</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.FPULnOsTuA1wVRkzl1P8L2</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.GOJaX4QNlBR1EeOE73kTDhO3</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.hWqPB42sbLC1omNv82Hq15x3</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.IcSV437yNQJ1cHR741Cwmba2</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.kPjbo2a2vnB1ozsA3jjZQS1</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.nggNV2CNOJ1yCx1Y4JlqG8</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.Uw3YJ23cz8B1TDiKKiiWR31</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.VTfMOANaOP10lWCG7v7wn3</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.VWeBI3X4cJS1B614M2IFRr23</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.z1z4K1vUPAC1a0RWN3gm2Uh3</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.z79Ow1j6XMM1Jicrm1r3LBT2</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.BAF.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftAzureOpenAI.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.EUfIEBRMpA1uC9bl34paTp</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>C78768592AD_generate.swMnu1YseaC1wOnAg4nwExh2</AssemblyReference>
+      <AssemblyReference>AttendedRobotStatus</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GetUBO" sap:VirtualizedContainerService.HintSize="548,1720" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="DocumentText" />
+      <Variable x:TypeArguments="x:String" Name="Result" />
+      <Variable x:TypeArguments="uisad:IDocumentData(uisascb:CustomGptDocumentType7E67631E392C45A09C22Bcad5849B79C)" Name="DocumentData" />
+      <Variable x:TypeArguments="x:String" Name="OpenAIResult" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <aa:AttendedRobotStatus DisplayName="Attended Robot Status" ErrorLvl="False" sap:VirtualizedContainerService.HintSize="486,80" sap2010:WorkflowViewState.IdRef="AttendedRobotStatus_1" InfoLvl="False" Message="Getting the list of Ultimate Beneficial Owners (UBO)." WarnLvl="False" />
+    <uisape:ExtractPDFText ApplyOcr="{x:Null}" FilePassword="{x:Null}" OcrEngine="{x:Null}" DisplayName="Extract PDF Text" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="ExtractPDFText_1" PdfFile="[LocalResource.FromPath(in_DocPath)]" Text="[DocumentText]" />
+    <aa:AttendedRobotStatus DisplayName="Attended Robot Status" ErrorLvl="False" sap:VirtualizedContainerService.HintSize="486,80" sap2010:WorkflowViewState.IdRef="AttendedRobotStatus_2" InfoLvl="False" Message="Extracted SEC Form DEF 14A filing. Asking AI to identify UBO." WarnLvl="False" />
+    <isactr:ConnectorActivity Configuration="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" ConnectionId="2d9abbe2-8c94-4bf3-84c9-ea3698102d5c" DisplayName="Generate Chat Completion" sap:VirtualizedContainerService.HintSize="486,285" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="5c6c646f-d321-3248-8fb1-a1829d267bb6">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="modelId" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-35-turbo-16k</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">["Build a CSV (; seperated) value of SECURITY OWNERSHIP (beneficial) - Named Executive Officers and individual shareholder's name (no institutional investors) and their shareholding in 'Owner;Shares;Percentage \n' format from the following informaiton: "+DocumentText]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="knowledge_base" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="vector_db" Type="FieldArgument" />
+        <isactr:FieldObject Name="embedding_model" Type="FieldArgument" />
+        <isactr:FieldObject Name="pineconeApiKey" Type="FieldArgument" />
+        <isactr:FieldObject Name="pineconeEnv" Type="FieldArgument" />
+        <isactr:FieldObject Name="pineconeIndex" Type="FieldArgument" />
+        <isactr:FieldObject Name="_namespace" Type="FieldArgument" />
+        <isactr:FieldObject Name="apiminus_signversion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">2023-10-01-preview</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">1920</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="n" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="top_p" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="stream" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[OpenAIResult]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_generateChatCompletionConsolidated" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:generateChatCompletionConsolidated_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+    <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators=";" DataTable="[out_dtOwnersInformation]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="486,201" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" Input="[OpenAIResult]" UseColumnHeader="True" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,673" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,594" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisascb:CustomGptDocumentType7E67631E392C45A09C22Bcad5849B79C" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Document Data" DocType="generative_extractor" ExtractionResults="[DocumentData]" FileInput="[LocalResource.FromPath(in_DocPath)]" sap:VirtualizedContainerService.HintSize="388,242" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ProjectId="00000000-0000-0000-0000-000000000000" TimeoutInSeconds="3600">
+            <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+              <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+              </InArgument>
+            </p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+            <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+              <InArgument x:TypeArguments="x:String" x:Key="Owners">CSV (; seperated) value of SECURITY OWNERSHIP - Named Executive Officers and shareholder's name and their shareholding in 'Owner;Shares;Percentage \n' format.</InArgument>
+            </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p:ExtractDocumentDataWithDocumentData>
+          <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators=";" DataTable="[out_dtOwnersInformation]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="388,201" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[&quot;Name;Shares;Percentage&quot;+Environment.NewLine+DocumentData.Data.Owners.Value]" UseColumnHeader="True" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

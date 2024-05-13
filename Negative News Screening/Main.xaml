@@ -1,0 +1,345 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_strEntitiesFilePath="[Directory.GetCurrentDirectory + &quot;\Input\Entities List.xlsx&quot;]" this:Main.in_strResultFilePath="[Directory.GetCurrentDirectory + &quot;\Output\Result.xlsx&quot;]" this:Main.in_ClassificationConfidenceLevel="71" this:Main.in_PythonLibFolder="C:\Users\anubhav.shankar\AppData\Local\Programs\Python\Python312\python312.dll" this:Main.in_NumberOfOwnersToConsider="2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upau="clr-namespace:UiPath.Persistence.Activities.UserAction;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strEntitiesFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="argument1" Type="InArgument(x:String)" />
+    <x:Property Name="in_strResultFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_ClassificationConfidenceLevel" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_PythonLibFolder" Type="InArgument(x:String)" />
+    <x:Property Name="in_NumberOfOwnersToConsider" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1202,3650</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Persistence.Activities.UserAction</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Task</x:String>
+      <x:String>UiPath.Persistence.Activities.BaseTask</x:String>
+      <x:String>UiPath.Persistence.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="648,3585" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtEntities" />
+      <Variable x:TypeArguments="scg:List(upau:UserActionData)" Default="[new List(of UserActionData)]" Name="listAppTasks" />
+      <Variable x:TypeArguments="upau:UserActionData" Name="outputTask" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange AddHeaders="True" DataTable="[dtEntities]" DisplayName="Read entities sheet" sap:VirtualizedContainerService.HintSize="586,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" PreserveFormat="True" SheetName="Sheet1" WorkbookPath="[in_strEntitiesFilePath]">
+      <ui:ReadRange.Range>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:ReadRange.Range>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtEntities]" DisplayName="For Each Row - entities" sap:VirtualizedContainerService.HintSize="586,2379" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,2193" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strCompanyName" />
+              <Variable x:TypeArguments="x:String" Name="strProxyStatementURL" />
+              <Variable x:TypeArguments="njl:JArray" Name="jarrayOutputRows" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dtOwnersInformation" />
+              <Variable x:TypeArguments="x:String" Name="ResultFilePath" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign - strCompanyName" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strCompanyName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[row("Company").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign - strProxyStatementURL" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strProxyStatementURL]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[row("Link to SEC Def 14A document").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[ResultFilePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_strResultFilePath.Replace(".xlsx","-"+strCompanyName+".xlsx")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="510,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[ResultFilePath]" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetUBO.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="510,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="GetUBO.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_DocPath">[strProxyStatementURL]</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtOwnersInformation">[dtOwnersInformation]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <If Condition="[dtOwnersInformation IsNot Nothing andAlso dtOwnersInformation.Rows.Count&gt;0]" DisplayName="Fill UBO Info in File" sap:VirtualizedContainerService.HintSize="510,386" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtOwnersInformation]" DisplayName="Write OwnersInfo" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[strCompanyName+&quot; - UBO&quot;]" WorkbookPath="[ResultFilePath]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtOwnersInformation]" DisplayName="Check Headlines for Each Owners" sap:VirtualizedContainerService.HintSize="510,1040" sap2010:WorkflowViewState.IdRef="ForEachRow_2" MaxIterations="[in_NumberOfOwnersToConsider]">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,854" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="OwnerName" />
+                      <Variable x:TypeArguments="sd:DataTable" Name="dtHeadlines" />
+                      <Variable x:TypeArguments="x:String" Name="SheetName" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[OwnerName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow("Owner").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:Replace BuilderPattern="[^\w\s]*\d*" DisplayName="Remove numericals and special characters" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[OwnerName]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;[^\\w\\s]*\\d*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="[^\w\s]*\d*" RegexOption="IgnoreCase, Compiled" Result="[OwnerName]">
+                      <ui:Replace.Replacement>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ui:Replace.Replacement>
+                    </ui:Replace>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetNewsHeadlines.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetNewsHeadlines.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Name">[OwnerName+", "+strCompanyName]</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtHeadLinesData">[dtHeadlines]</OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <Assign DisplayName="SheetName is OwnerName (but cannot exceed 30 chars)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[SheetName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[If(OwnerName.Length&gt;30,OwnerName.Substring(0,30),OwnerName)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckHeadlinesForNegativeNews.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CheckHeadlinesForNegativeNews.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_Headlines">[dtHeadlines]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_ConfidenceLevel">[in_ClassificationConfidenceLevel]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[ResultFilePath]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[SheetName]</InArgument>
+                        <InOutArgument x:TypeArguments="scg:List(upau:UserActionData)" x:Key="io_lstUserActions">[listAppTasks]</InOutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_PythonLibFolder">[in_PythonLibFolder]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtHeadlines]" DisplayName="Write OwnersInfo" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="[SheetName]" WorkbookPath="[ResultFilePath]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ParallelForEach x:TypeArguments="upau:UserActionData" DisplayName="Parallel For Each" sap:VirtualizedContainerService.HintSize="586,504" sap2010:WorkflowViewState.IdRef="ParallelForEach`1_2" Values="[listAppTasks]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ActivityAction x:TypeArguments="upau:UserActionData">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="upau:UserActionData" Name="appTask" />
+        </ActivityAction.Argument>
+        <Sequence sap:VirtualizedContainerService.HintSize="450,354" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <upau:WaitForUserActionAndResume StatusMessage="{x:Null}" TaskAction="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait For App Task and Resume" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="WaitForUserActionAndResume_1" TaskInput="[appTask]" TaskOutput="[outputTask]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdateInfo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="UpdateInfo.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="upau:UserActionData" x:Key="AppTask">[outputTask]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ActivityAction>
+    </ParallelForEach>
+    <If Condition="[listAppTasks IsNot Nothing AndAlso listAppTasks.Count&gt;0]" sap:VirtualizedContainerService.HintSize="586,383" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UploadToStorageBucket.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="UploadToStorageBucket.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ResultFile">[outputTask.GetDataJsonObject.GetValue("file_path").ToString]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

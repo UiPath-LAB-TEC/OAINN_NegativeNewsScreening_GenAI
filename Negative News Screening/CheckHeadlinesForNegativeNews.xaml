@@ -1,0 +1,436 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckHeadlinesForNegativeNews" this:CheckHeadlinesForNegativeNews.in_ConfidenceLevel="70" this:CheckHeadlinesForNegativeNews.in_PythonLibFolder="C:\Users\anubhav.shankar\AppData\Local\Programs\Python\Python312\python312.dll" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:aa="clr-namespace:AttendedRobotStatus.Activities;assembly=AttendedRobotStatus" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C3698102D5C_generateChatCompletionConsolidated_Create.Bundle;assembly=C3698102D5C_generate.UzsYr1XoLzF1Gz41CiMGFv" xmlns:upama="clr-namespace:UiPath.Persistence.Activities.Model.Apps;assembly=UiPath.Persistence.Activities" xmlns:upau="clr-namespace:UiPath.Persistence.Activities.UserAction;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_Headlines" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_ConfidenceLevel" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_SheetName" Type="InArgument(x:String)" />
+    <x:Property Name="io_lstUserActions" Type="InOutArgument(scg:List(upau:UserActionData))" />
+    <x:Property Name="in_PythonLibFolder" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1202,4671</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CheckHeadlinesForNegativeNews_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Entity</x:String>
+      <x:String>UiPath.IntegrationService.Infrastructure.Descriptor</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Enums</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Telemetry</x:String>
+      <x:String>UiPath.BAF.Infrastructure</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Connection</x:String>
+      <x:String>UiPath.MicrosoftAzureOpenAI.IntegrationService.Activities</x:String>
+      <x:String>UiPath.IntegrationCore.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>UiPath.BAF.Infrastructure.Contracts</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Apps</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Task</x:String>
+      <x:String>UiPath.Persistence.Activities.UserAction</x:String>
+      <x:String>UiPath.Persistence.Activities.BaseTask</x:String>
+      <x:String>UiPath.Persistence.Activities</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>AttendedRobotStatus.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.BAF.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Infrastructure</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftAzureOpenAI.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>AttendedRobotStatus</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CheckHeadlinesForNegativeNews" sap:VirtualizedContainerService.HintSize="617,4606" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Headlines" />
+      <Variable x:TypeArguments="x:String" Name="OpenAIResult" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtClassifiedHeadlines" />
+      <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="555,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Headlines]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[String.Join(";",io_Headlines.AsEnumerable.Select(function(row) row("Headline")).ToArray)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="555,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Headlines]" />
+    <aa:AttendedRobotStatus DisplayName="Attended Robot Status" ErrorLvl="False" sap:VirtualizedContainerService.HintSize="555,80" sap2010:WorkflowViewState.IdRef="AttendedRobotStatus_1" InfoLvl="False" Message="[&quot;Identifying news sentiment and its classification for news related to : &quot;+in_SheetName]" WarnLvl="False" />
+    <isactr:ConnectorActivity Configuration="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" ConnectionId="2d9abbe2-8c94-4bf3-84c9-ea3698102d5c" DisplayName="Generate Chat Completion" sap:VirtualizedContainerService.HintSize="555,285" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="5c6c646f-d321-3248-8fb1-a1829d267bb6">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="modelId" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-35-turbo</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">["Based on the following list of company news headlines, build a csv(^^ seperated) consisting of 'Headline^^Sentiment^^Category^^Confidence\n' format. Sentiment could be negative or positive (from public shareholders perspective). Category could be non-crime or crime (sub category - Lawsuit, Sex Trafficking, Drug Trafficking, Money Laundering, Arrest, Law Enforcement, Human Trafficking, and Terroism). Add the category classification confidence you have from (1 -100). News Headlines List: "+Headlines]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="knowledge_base" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="vector_db" Type="FieldArgument" />
+        <isactr:FieldObject Name="embedding_model" Type="FieldArgument" />
+        <isactr:FieldObject Name="pineconeApiKey" Type="FieldArgument" />
+        <isactr:FieldObject Name="pineconeEnv" Type="FieldArgument" />
+        <isactr:FieldObject Name="pineconeIndex" Type="FieldArgument" />
+        <isactr:FieldObject Name="_namespace" Type="FieldArgument" />
+        <isactr:FieldObject Name="apiminus_signversion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">2023-10-01-preview</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">1920</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="n" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="top_p" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="stream" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[OpenAIResult]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_generateChatCompletionConsolidated" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:generateChatCompletionConsolidated_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+    <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators="^^" DataTable="[dtClassifiedHeadlines]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="555,201" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[OpenAIResult]" UseColumnHeader="True" />
+    <If Condition="[dtClassifiedHeadlines is nothing orElse dtClassifiedHeadlines.Rows.Count&lt;&gt;io_Headlines.Rows.Count]" sap:VirtualizedContainerService.HintSize="555,360" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[new Exception(&quot;Classificaiton failed. Please try after sometime.&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3" />
+      </If.Else>
+    </If>
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Sentiment" DataTable="[io_Headlines]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[io_Headlines]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Confidence" DataTable="[io_Headlines]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[CurrentIndex]" DataTable="[io_Headlines]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,2323" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,2137" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Sentiment")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[dtClassifiedHeadlines.Rows(CurrentIndex)("Sentiment")]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Category")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[dtClassifiedHeadlines.Rows(CurrentIndex)("Category")]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Confidence")]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Object">[dtClassifiedHeadlines.Rows(CurrentIndex)("Confidence")]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <If Condition="[Convert.ToInt32(CurrentRow(&quot;Confidence&quot;))&lt;in_ConfidenceLevel]" sap:VirtualizedContainerService.HintSize="479,1831" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,1649" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="ArticleSummary" />
+                    <Variable x:TypeArguments="upau:UserActionData" Name="CreatedAppTask" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <aa:AttendedRobotStatus DisplayName="Attended Robot Status" ErrorLvl="False" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="AttendedRobotStatus_3" InfoLvl="False" Message="[&quot;News screening confidence low for : &quot;+CurrentRow(&quot;URL&quot;).ToString]" WarnLvl="False" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetArticle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetArticle.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_url">[CurrentRow("URL").ToString.Trim]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_articleBody">[ArticleSummary]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_PythonLibFolder">[in_PythonLibFolder]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <aa:AttendedRobotStatus DisplayName="Attended Robot Status" ErrorLvl="False" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="AttendedRobotStatus_5" InfoLvl="False" Message="Creating Action Task." WarnLvl="False" />
+                  <upau:CreateUserAction ExternalTag="{x:Null}" Labels="{x:Null}" TimeoutMs="{x:Null}" DisplayName="Create App Task" EnforcePropertyRefresh="False" sap:VirtualizedContainerService.HintSize="334,806" sap2010:WorkflowViewState.IdRef="CreateUserAction_2" TaskCatalog="OAINN_NegativeNewsScreening" TaskOutput="[CreatedAppTask]" TaskPriority="Medium" TaskTitle="Negative News Screening Task">
+                    <upau:CreateUserAction.AppActionData>
+                      <OutArgument x:TypeArguments="x:String" x:Key="category" x:Name="__ReferenceID0" />
+                      <OutArgument x:TypeArguments="x:String" x:Key="sentiment" x:Name="__ReferenceID1" />
+                      <InArgument x:TypeArguments="x:String" x:Key="auto_sentiment">[CurrentRow("Sentiment").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="auto_category">[CurrentRow("Category").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="auto_confidence">[CurrentRow("Confidence").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="file_path">[in_FilePath]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="headline">[CurrentRow("Headline").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="index">[CurrentIndex.ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="sheet_name">[in_SheetName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="summary">[ArticleSummary]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="url">[CurrentRow("URL").ToString.Trim]</InArgument>
+                    </upau:CreateUserAction.AppActionData>
+                    <upau:CreateUserAction.AppActionPropertiesMetadata>
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="auto_category" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="auto_confidence" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="auto_sentiment" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="file_path" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="headline" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="index" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="sheet_name" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="summary" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="url" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="category" />
+                      <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="sentiment" />
+                    </upau:CreateUserAction.AppActionPropertiesMetadata>
+                    <upau:CreateUserAction.CurrentAppTaskState>
+                      <upama:AppTaskState AppId="ID874870381e0b4095b96da81b3b259b52" AppName="OAINN_NegativeNewsScreening_GenAI" AppVersion="2" TaskDefinitionId="26" TaskDefinitionKey="313eca02-c687-4a99-9d32-2348dc2b66f6" TaskDefinitionName="Negative News Screening Task" TaskDefinitionVersion="2" />
+                    </upau:CreateUserAction.CurrentAppTaskState>
+                    <upau:CreateUserAction.State>
+                      <upama:RecordDynamicActionPropertiesState>
+                        <upama:RecordDynamicActionPropertiesState.SelectedFields>
+                          <scg:List x:TypeArguments="upama:DynamicActionDefinitionSchemaField" Capacity="11">
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="sheet_name" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[in_SheetName]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="file_path" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[in_FilePath]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="index" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[CurrentIndex.ToString]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="url" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[CurrentRow("URL").ToString.Trim]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="headline" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[CurrentRow("Headline").ToString]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="summary" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[ArticleSummary]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="auto_category" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[CurrentRow("Category").ToString]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="auto_sentiment" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[CurrentRow("Sentiment").ToString]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="auto_confidence" PropertyType="string">
+                              <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">[CurrentRow("Confidence").ToString]</InArgument>
+                              </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                            </upama:DynamicActionDefinitionSchemaField>
+                            <upama:DynamicActionDefinitionSchemaField ArgumentValue="{x:Reference __ReferenceID0}" PropertyFormat="{x:Null}" Direction="Out" IsRequired="False" Name="category" PropertyType="string" />
+                            <upama:DynamicActionDefinitionSchemaField ArgumentValue="{x:Reference __ReferenceID1}" PropertyFormat="{x:Null}" Direction="Out" IsRequired="False" Name="sentiment" PropertyType="string" />
+                          </scg:List>
+                        </upama:RecordDynamicActionPropertiesState.SelectedFields>
+                      </upama:RecordDynamicActionPropertiesState>
+                    </upau:CreateUserAction.State>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </upau:CreateUserAction>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Created user task for: &quot;+in_SheetName+&quot; info at row: &quot;+(CurrentIndex+2).ToString+&quot;. Headline : &quot;+CurrentRow(&quot;Headline&quot;).ToString]" />
+                  <uasc:AppendItemToCollection x:TypeArguments="upau:UserActionData" Collection="[io_lstUserActions]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2" Result="[io_lstUserActions]">
+                    <uasc:AppendItemToCollection.Items>
+                      <scg:List x:TypeArguments="InArgument(upau:UserActionData)" Capacity="4">
+                        <InArgument x:TypeArguments="upau:UserActionData">[CreatedAppTask]</InArgument>
+                      </scg:List>
+                    </uasc:AppendItemToCollection.Items>
+                  </uasc:AppendItemToCollection>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[io_Headlines]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="555,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="test" WorkbookPath="test.xlsx" />
+  </Sequence>
+</Activity>

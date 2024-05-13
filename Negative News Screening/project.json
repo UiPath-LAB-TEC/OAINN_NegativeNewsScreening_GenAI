@@ -1,0 +1,79 @@
+{
+  "name": "Negative News Screening",
+  "projectId": "03595ed2-9bd6-4ecb-b629-3575ef90a5bd",
+  "description": "Blank Process",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.DocumentUnderstanding.Activities": "[2.9.0]",
+    "UiPath.Excel.Activities": "[2.22.1-preview]",
+    "UiPath.IntegrationService.Activities": "1.4.0",
+    "UiPath.Mail.Activities": "[1.20.3]",
+    "UiPath.MicrosoftAzureOpenAI.IntegrationService.Activities": "[7.1.0]",
+    "UiPath.PDF.Activities": "[3.19.0]",
+    "UiPath.Persistence.Activities": "[1.5.5]",
+    "UiPath.Python.Activities": "[1.8.1]",
+    "UiPath.System.Activities": "24.3.1",
+    "UiPath.Testing.Activities": "[23.10.0-preview]",
+    "UiPath.UIAutomation.Activities": "[23.10.0-preview]",
+    "UiPath.WebAPI.Activities": "[1.20.1]",
+    "UiPathTeam.AttendedRobotStatus.Activities": "[2.0.0]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "23.10.0.0",
+  "projectVersion": "1.0.168683906",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": true,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "f86a8046-6a6c-41bc-8b81-acd52a273120",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TestCase_CheckNewsHeadlines.xaml"
+      }
+    ],
+    "modernBehavior": true,
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "0f19bef3-7c0f-431e-8044-8aa635cdffa9",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

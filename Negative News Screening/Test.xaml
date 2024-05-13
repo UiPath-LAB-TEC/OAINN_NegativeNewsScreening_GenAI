@@ -1,0 +1,203 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1147,1242" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:upama="clr-namespace:UiPath.Persistence.Activities.Model.Apps;assembly=UiPath.Persistence.Activities" xmlns:upau="clr-namespace:UiPath.Persistence.Activities.UserAction;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Apps</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Task</x:String>
+      <x:String>UiPath.Persistence.Activities.UserAction</x:String>
+      <x:String>UiPath.Persistence.Activities.BaseTask</x:String>
+      <x:String>UiPath.Persistence.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="450,1177" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Category" />
+      <Variable x:TypeArguments="x:String" Name="Sentiment" />
+      <Variable x:TypeArguments="upau:UserActionData" Name="CreatedAppTask" />
+      <Variable x:TypeArguments="upau:UserActionData" Name="outputObject" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <upau:CreateUserAction ExternalTag="{x:Null}" Labels="{x:Null}" TaskCatalog="{x:Null}" TimeoutMs="{x:Null}" DisplayName="Create App Task" EnforcePropertyRefresh="False" sap:VirtualizedContainerService.HintSize="388,806" sap2010:WorkflowViewState.IdRef="CreateUserAction_2" TaskOutput="[CreatedAppTask]" TaskPriority="Medium" TaskTitle="Test Task">
+      <upau:CreateUserAction.AppActionData>
+        <OutArgument x:TypeArguments="x:String" x:Key="category">[Category]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="sentiment">[Sentiment]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="auto_category">"Test Category"</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="auto_confidence">11</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="auto_sentiment">Positivie</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="file_path">TestPath</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="headline">Test Headline written in a way so that I can see the placement over the place holder</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="index">1</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="sheet_name">TestSheet</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="summary">This is a summary para of the dummy news for which I've provided the headline as well. This is to test whether the summary is also in line with what is expected in the long run.</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="url">https://google.com</InArgument>
+      </upau:CreateUserAction.AppActionData>
+      <upau:CreateUserAction.AppActionPropertiesMetadata>
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="auto_category" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="auto_confidence" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="auto_sentiment" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="file_path" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="headline" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="index" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="sheet_name" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="summary" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="url" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="category" />
+        <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="sentiment" />
+      </upau:CreateUserAction.AppActionPropertiesMetadata>
+      <upau:CreateUserAction.CurrentAppTaskState>
+        <upama:AppTaskState AppId="ID874870381e0b4095b96da81b3b259b52" AppName="OAINN_NegativeNewsScreening_GenAI" AppVersion="1" TaskDefinitionId="26" TaskDefinitionKey="313eca02-c687-4a99-9d32-2348dc2b66f6" TaskDefinitionName="Negative News Screening Task" TaskDefinitionVersion="2" />
+      </upau:CreateUserAction.CurrentAppTaskState>
+      <upau:CreateUserAction.State>
+        <upama:RecordDynamicActionPropertiesState>
+          <upama:RecordDynamicActionPropertiesState.SelectedFields>
+            <scg:List x:TypeArguments="upama:DynamicActionDefinitionSchemaField" Capacity="11">
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="sheet_name" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">TestSheet</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="file_path" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">TestPath</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="index" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">1</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="url" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">https://google.com</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="headline" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">Test Headline written in a way so that I can see the placement over the place holder</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="summary" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">This is a summary para of the dummy news for which I've provided the headline as well. This is to test whether the summary is also in line with what is expected in the long run.</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="auto_category" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">"Test Category"</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="auto_sentiment" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">Positivie</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="auto_confidence" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">11</InArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="Out" IsRequired="False" Name="category" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <OutArgument x:TypeArguments="x:String">[Category]</OutArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+              <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="Out" IsRequired="False" Name="sentiment" PropertyType="string">
+                <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                  <OutArgument x:TypeArguments="x:String">[Sentiment]</OutArgument>
+                </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+              </upama:DynamicActionDefinitionSchemaField>
+            </scg:List>
+          </upama:RecordDynamicActionPropertiesState.SelectedFields>
+        </upama:RecordDynamicActionPropertiesState>
+      </upau:CreateUserAction.State>
+    </upau:CreateUserAction>
+    <upau:WaitForUserActionAndResume StatusMessage="{x:Null}" TaskAction="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait For App Task and Resume" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="WaitForUserActionAndResume_1" TaskInput="[CreatedAppTask]" TaskOutput="[outputObject]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[outputObject.GetDataJsonObject.GetValue(&quot;file_path&quot;).ToString]" />
+  </Sequence>
+</Activity>
